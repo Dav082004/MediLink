@@ -11,41 +11,7 @@ body:
       placeholder: Ej. Implementar formulario de registro en React con validación de contraseña.
     validations:
       required: true
-
-  - type: dropdown
-    id: role
-    attributes:
-      label: 🧑‍💻 Rol asignado
-      options:
-        - UX/UI
-        - Frontend
-        - Backend
-    validations:
-      required: true
-
-  - type: dropdown
-    id: priority
-    attributes:
-      label: 🚦 Prioridad
-      options:
-        - High
-        - Medium
-        - Low
-    validations:
-      required: true
-
-  - type: textarea
-    id: acceptance
-    attributes:
-      label: ✅ Criterios de aceptación
-      description: Lista de condiciones que deben cumplirse para dar esta tarea por terminada.
-      placeholder: |
-        - Validar formato de email y contraseñas seguras
-        - Responder 201 con userId al crear usuario
-        - Mostrar mensajes de error accesibles en frontend
-    validations:
-      required: true
-
+      
   - type: textarea
     id: notes
     attributes:
