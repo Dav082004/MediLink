@@ -60,7 +60,9 @@ $ npm run test:cov
 ## Modules
 
 ### Auth
-The application guardian, responsible for validating roles using KeyCloak as an IAM server. Usage:
+The application guardian, responsible for validating roles using KeyCloak as an IAM server.
+
+#### Usage
 
 ```bash
 @UseGuards(AuthGuard('jwt'), RolesGuard) 
@@ -68,6 +70,14 @@ The application guardian, responsible for validating roles using KeyCloak as an 
 @Post('create-slot')
 protectedEndpoint() {}
 ```
+
+#### Available roles
+
+- Practitioner
+- Patient
+- Admin
+
+Roles must be managed through keycloak !
 
 
 
