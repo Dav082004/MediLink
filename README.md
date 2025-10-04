@@ -59,5 +59,5 @@ $ npm run test:cov
 
 ## Modules
 
-#Auth
+# Auth
 
