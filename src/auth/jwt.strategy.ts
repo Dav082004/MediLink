@@ -3,16 +3,16 @@ import { PassportStrategy } from '@nestjs/passport';
 import { ExtractJwt, Strategy } from 'passport-jwt';
 import { Injectable } from '@nestjs/common';
 import { passportJwtSecret } from 'jwks-rsa';
+import { ConfigService } from '@nestjs/config';
 
 @Injectable()
 export class JwtStrategy extends PassportStrategy(Strategy) {
-  constructor() {
+  constructor(private readonly config: ConfigService) {
     super({
       jwtFromRequest: ExtractJwt.fromAuthHeaderAsBearerToken(),
       ignoreExpiration: false,
       secretOrKeyProvider: passportJwtSecret({
-        jwksUri:
-          'http://keycloak-host/realms/tu_realm_id/protocol/openid-connect/certs',
+        jwksUri: `http://keycloak-host/realms/${config.get('REALM')}/protocol/openid-connect/certs`,
         cache: true,
         rateLimit: true,
         jwksRequestsPerMinute: 5,
