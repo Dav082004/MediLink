@@ -66,7 +66,7 @@ The application guardian, responsible for validating roles using KeyCloak as an 
 
 ```bash
 @UseGuards(AuthGuard('jwt'), RolesGuard) 
-@Roles('RolesTypes.ADMIN')
+@Roles(RolesTypes.ADMIN)
 @Post('create-slot')
 protectedEndpoint() {}
 ```
