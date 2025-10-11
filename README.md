@@ -66,15 +66,15 @@ The application guardian, responsible for validating roles using KeyCloak as an 
 
 ```bash
 @UseGuards(AuthGuard('jwt'), RolesGuard) 
-@Roles('physician')
+@Roles('RolesTypes.ADMIN')
 @Post('create-slot')
 protectedEndpoint() {}
 ```
 
 #### Available roles
 
-- Practitioner
-- Patient
+- Medic
+- Client
 - Admin
 
 Roles must be managed through keycloak !
